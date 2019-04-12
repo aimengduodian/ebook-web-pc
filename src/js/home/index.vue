@@ -1,14 +1,16 @@
 <template lang="html">
     <div>
         <headerAd/>
-        <slider/>
-        <novice></novice>
-        <borrow></borrow>
-        <money></money>
-        <product></product>
-        <life></life>
-        <foot></foot>
-        <navbar></navbar>
+        <div :class="$style.content">
+            <slider/>
+            <novice></novice>
+            <borrow></borrow>
+            <money></money>
+            <product></product>
+            <life></life>
+            <foot></foot>
+        </div>
+        <navbar/>
     </div>
 </template>
 
@@ -36,3 +38,9 @@
         }
     }
 </script>
+
+<style lang="scss" module>
+    .content{
+        overflow: hidden;
+    }
+</style>

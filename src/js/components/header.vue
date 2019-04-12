@@ -1,10 +1,10 @@
 <template>
-    <div :class="$style.header">
+    <section :class="$style.header">
         <span :class="$style.left">
             <a>注册</a>&nbsp;|&nbsp;<a>登陆</a>
         </span>
         <btn :class="$style.btnDownload">App下载</btn>
-    </div>
+    </section>
 </template>
 
 <script>

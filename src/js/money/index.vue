@@ -1,17 +1,19 @@
 <template lang="html">
     <div>
         <headerAd/>
-        <slider/>
-        <foot/>
+        <div :class="$style.content">
+            <slider/>
+            <foot/>
+        </div>
         <navbar/>
     </div>
 </template>
 
 <script>
-    import headerAd from '@/js/components/header';
-    import navbar from '@/js/components/navbar';
-    import foot from '@/js/components/footer'
-    import slider from '@/js/money/mslider'
+    import headerAd from '../components/header';
+    import navbar from '../components/navbar';
+    import foot from '../components/footer'
+    import slider from '../money/mslider'
     export default {
         components: {
             headerAd,
@@ -21,3 +23,9 @@
         }
     }
 </script>
+
+<style lang="scss" module>
+    .content{
+        overflow: hidden;
+    }
+</style>

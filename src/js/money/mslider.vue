@@ -8,7 +8,7 @@
 
 <script>
 import panel from '../core/panel'
-import Slider from "@/js/core/slider";
+import Slider from "../core/slider";
 export default {
     components: {
         Slider,
