@@ -10,8 +10,9 @@ export default {
     props: {
         cname: {
             type: String,
+            required: false, //是否为必填
             default: "",
-        }
+        },
     },
     data() {
         return {

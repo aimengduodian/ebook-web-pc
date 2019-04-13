@@ -1,6 +1,6 @@
 import Vue from "vue"
 import Router from "vue-router"
-import "@/css/reset.scss"
+import "../css/reset.scss"
 
 //组件模块
 import Home from "../js/home/index"

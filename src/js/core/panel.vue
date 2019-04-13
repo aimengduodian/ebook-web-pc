@@ -30,8 +30,8 @@ export default {
     .panel{
         @include panel;
         /*
-        //panel的h4标题下添加横向
         >h4{
+            //panel的h4标题下添加横向
             border-bottom: 1px solid #ddd;
         }*/
     }

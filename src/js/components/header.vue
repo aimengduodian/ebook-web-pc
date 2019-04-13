@@ -3,7 +3,7 @@
         <span :class="$style.left">
             <a>注册</a>&nbsp;|&nbsp;<a>登陆</a>
         </span>
-        <btn :class="$style.app">App下载</btn>
+        <btn :class="$style.appDownload">App下载</btn>
     </section>
 </template>
 
@@ -27,7 +27,7 @@ export default {
         left: 0;
         right: 0;
         font-size: 16px;
-        background: #fff url(//m.jr.jd.com/spe/qyy/main/images/jr-logo.png) center center no-repeat;
+        background: #fff url(//m.jr.jd.com/spe/qyy/main/images/jr-logo.png) center no-repeat;
         background-size: auto 50%;
         z-index: 100;
         .left{
@@ -36,7 +36,7 @@ export default {
             line-height: 15px;
             margin: 9px 0 0 9px;
         }
-        .app{
+        .appDownload{
             float: right;
             font-size: 12px;
             border-width: 0;
