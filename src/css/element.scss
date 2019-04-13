@@ -26,9 +26,9 @@
     height: $height;
     line-height: $height;
     padding: $txtpadding;
-    text-overflow: ellipsis;//内容过程设置'...'
-    white-space: nowrap;    //禁止换行
-    overflow: hidden;       //超出隐藏
+    text-overflow: ellipsis;/*内容过程设置'...'*/
+    white-space: nowrap;    /*禁止换行*/
+    overflow: hidden;       /*超出隐藏*/
     text-align: center;
     color: $color;
     font-size: $fontSize;

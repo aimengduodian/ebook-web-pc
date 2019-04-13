@@ -59,7 +59,6 @@
 <style lang="scss" module>
     @import "../../css/element";
     .slider{
-        margin-top: 60px;
         img{
             width: 100%;/*图片占比100%*/
         }

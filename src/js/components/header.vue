@@ -20,8 +20,8 @@ export default {
     //做css module处理
     .header{
         color: #666;
-        height: 60px;
-        line-height: 60px;
+        height: 50px;
+        line-height: 50px;
         position: fixed;
         top: 0;
         left: 0;
