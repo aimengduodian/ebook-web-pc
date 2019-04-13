@@ -39,7 +39,6 @@ export default {
     @import "../../css/element";
     .panel{
         @include panel;
-        margin-bottom: 50px;
         &>h4{
             display: none;
         }

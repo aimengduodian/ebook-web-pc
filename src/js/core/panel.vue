@@ -29,8 +29,10 @@ export default {
     @import "../../css/element";
     .panel{
         @include panel;
+        /*
+        //panel的h4标题下添加横向
         >h4{
             border-bottom: 1px solid #ddd;
-        }
+        }*/
     }
 </style>

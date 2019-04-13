@@ -3,7 +3,7 @@
         <span :class="$style.left">
             <a>注册</a>&nbsp;|&nbsp;<a>登陆</a>
         </span>
-        <btn :class="$style.btnDownload">App下载</btn>
+        <btn :class="$style.app">App下载</btn>
     </section>
 </template>
 
@@ -36,7 +36,7 @@ export default {
             line-height: 15px;
             margin: 9px 0 0 9px;
         }
-        .btnDownload{
+        .app{
             float: right;
             font-size: 12px;
             border-width: 0;
