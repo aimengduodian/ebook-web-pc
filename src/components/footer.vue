@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import panel from "../core/panel"
+import panel from "../page/core/panel"
 export default {
     components: {
         panel,
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-    @import "../../css/element";
+    @import "../styles/element";
     .panel{
         @include panel;
         &>h4{

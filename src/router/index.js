@@ -1,10 +1,10 @@
 import Vue from "vue"
 import Router from "vue-router"
-import "../css/reset.scss"
+import "../styles/reset.scss"
 
 //组件模块
-import Home from "../js/home/index"
-import Money from "../js/money/index"
+import Home from "../page/home/index"
+import Money from "../page/money/index"
 //组件测试模块
 import StorageTest from "../../test/storageTest"
 import RequestTest from "../../test/requestTest"

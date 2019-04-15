@@ -62,7 +62,7 @@ export default {
 </style>
 
 <style lang="scss" module>
-    @import "../../css/element";
+    @import "../../styles/element";
     .panel{
         @include panel;
         .content{

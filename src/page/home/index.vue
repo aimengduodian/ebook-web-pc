@@ -15,15 +15,15 @@
 </template>
 
 <script>
-    import headerAd from '../components/header';
-    import navbar from '../components/navbar';
+    import headerAd from '../../components/header';
+    import navbar from '../../components/navbar';
     import slider from './hslider'
     import novice from './novice'
     import borrow from './borrow'
     import money from './money'
     import product from './product'
     import life from './life'
-    import foot from '../components/footer'
+    import foot from '../../components/footer'
 
     export default {
         components: {

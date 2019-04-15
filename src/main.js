@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router/index'
-import store from './js/store/index'
+import store from './store/index'
 //导入api接口
 import api from './common/request/api'
 

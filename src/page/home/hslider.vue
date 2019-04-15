@@ -57,7 +57,7 @@
 </script>
 
 <style lang="scss" module>
-    @import "../../css/element";
+    @import "../../styles/element";
     .slider{
         img{
             width: 100%;/*图片占比100%*/

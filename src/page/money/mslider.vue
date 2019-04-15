@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-   @import "../../css/element";
+   @import "../../styles/element";
     .panel{
         @include panel;
         >h4{

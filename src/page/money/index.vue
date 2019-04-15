@@ -10,9 +10,9 @@
 </template>
 
 <script>
-    import headerAd from '../components/header';
-    import navbar from '../components/navbar';
-    import foot from '../components/footer'
+    import headerAd from '../../components/header';
+    import navbar from '../../components/navbar';
+    import foot from '../../components/footer'
     import slider from '../money/mslider'
     export default {
         components: {

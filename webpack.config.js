@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-    entry: ['./src/js/plugins/viewport.js','./src/main.js'],
+    entry: ['./src/page/plugins/viewport.js','./src/main.js'],
     module: {
         loaders: [{
             //识别，告诉webpack什么样的文件用什么样的解析器
@@ -12,7 +12,7 @@ module.exports = {
             loader: "vue-loader"
         },{
             test:/\.scss$/,
-            loader:"style-loader!css-loader!sass-loader"
+            loader:"style-loader!styles-loader!sass-loader"
         }]
     },
     plugins: {},

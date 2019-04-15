@@ -4,7 +4,7 @@
  *************************************************/
 import axios from 'axios'
 import router from '../../../router/index'
-import store from '../../../js/store/index'
+import store from '../../../store/index'
 
 /**
  * 提示函数
@@ -115,4 +115,9 @@ instance.interceptors.response.use(
         }
     });
 
-export default instance
+/**
+ *  封装get请求
+ */
+
+
+export default instance;
