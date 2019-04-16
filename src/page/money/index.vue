@@ -1,5 +1,6 @@
 <template lang="html">
     <div :class="$style.body">
+        <pic-test></pic-test>
         <headerAd/>
         <div :class="$style.content">
             <slider/>
@@ -14,12 +15,15 @@
     import navbar from '../../components/navbar';
     import foot from '../../components/footer'
     import slider from '../money/mslider'
+    import picTest from "../../../src/components/picUpload/picProcess"
+
     export default {
         components: {
             headerAd,
             navbar,
             slider,
             foot,
+            picTest,
         }
     }
 </script>

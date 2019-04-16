@@ -8,6 +8,7 @@ import Money from "../page/money/index"
 //组件测试模块
 import StorageTest from "../../test/storageTest"
 import RequestTest from "../../test/requestTest"
+import PicTest from "../../src/components/picUpload/picProcess"
 
 Vue.use(Router);
 
@@ -32,6 +33,11 @@ export default new Router({
             path: "/requestTest",
             name: "requestTest",
             component: RequestTest,
+        },
+        {
+            path: "/picTest",
+            name: "picTest",
+            component: PicTest,
         }
     ]
 })

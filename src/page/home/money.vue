@@ -56,7 +56,7 @@ export default {
                 content: " ";
                 display: block;
                 width: 100%;
-                height: 0px;
+                height: 0;
                 box-sizing: border-box;
                 border-bottom: 1px solid #ddd;
                 position: relative;
