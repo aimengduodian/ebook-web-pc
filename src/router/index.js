@@ -1,7 +1,6 @@
 import Vue from "vue"
 import Router from "vue-router"
 import "../styles/reset.scss"
-
 //组件模块
 import Home from "../page/home/index"
 import Money from "../page/money/index"
@@ -9,10 +8,13 @@ import Money from "../page/money/index"
 import StorageTest from "../../test/storageTest"
 import RequestTest from "../../test/requestTest"
 import PicTest from "../../src/components/picUpload/picProcess"
+import ReFresh from "../../test/dropDownRefreshTest"
 
 Vue.use(Router);
 
 export default new Router({
+    mode: 'history',
+    base: '/',
     routes: [
         {
             path: "/",
@@ -38,6 +40,11 @@ export default new Router({
             path: "/picTest",
             name: "picTest",
             component: PicTest,
+        },
+        {
+            path: "/reFresh",
+            name: "reFresh",
+            component: ReFresh,
         }
     ]
 })
