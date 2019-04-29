@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-    @import '../../styles/element';
+    @import '../../styles/scss/element';
     .panel{
         @include panel;
         >h4{

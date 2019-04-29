@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-    @import "../../styles/element";
+    @import "../../styles/scss/element";
     .panel{
         @include panel;
         /*

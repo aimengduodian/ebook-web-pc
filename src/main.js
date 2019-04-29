@@ -6,6 +6,7 @@ import store from './store/index'
 import api from './common/request/api'
 
 Vue.config.productionTip = false;
+
 //将api挂载到vue的原型上、定义为全局变量
 Vue.prototype.$api = api;
 

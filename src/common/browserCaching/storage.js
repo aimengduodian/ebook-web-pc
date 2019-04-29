@@ -33,7 +33,7 @@ let storage = {
      * removeAll删除数据
      * @ param {String}  key键
      * */
-    removeAllLocal(key) {
+    removeAllLocal() {
         localStorage.clear()
     },
 

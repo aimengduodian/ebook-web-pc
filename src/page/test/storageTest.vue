@@ -43,7 +43,7 @@
 </template>
 
 <script>
-    import storage from '../src/common/browserCaching/storage.js'
+    import storage from '../../common/browserCaching/storage.js'
 
     export default {
         data() {

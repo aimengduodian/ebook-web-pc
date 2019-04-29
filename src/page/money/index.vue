@@ -1,10 +1,11 @@
 <template lang="html">
-    <div :class="$style.body">
-        <pic-test></pic-test>
+    <div>
         <headerAd/>
-        <div :class="$style.content">
-            <slider/>
-            <foot/>
+        <div :class="$style.body">
+            <div :class="$style.content">
+                <slider/>
+                <foot/>
+            </div>
         </div>
         <navbar/>
     </div>

@@ -67,7 +67,6 @@
                 let base64url = cas.toDataURL('image/jpeg');
 
                 this.imgurl = base64url.toString();
-                console.log(this.imgurl);
                 alert("保存成功");
                 this.panelShow = false;
             }
