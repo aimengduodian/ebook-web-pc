@@ -3,7 +3,7 @@
  *  拦截、相应拦截、错误统一处理
  *************************************************/
 import axios from 'axios'
-import router from '../../../router/index'
+import router from '../../../router'
 import store from '../../../store/index'
 
 /**
@@ -36,7 +36,7 @@ const toLogin = () => {
  * @param {Number} status 请求失败的状态码
  * @param other
  */
-const errorHandle = (status, other) => {
+let errorHandle = (status, other) => {
     // 状态码判断
     switch (status) {
         case 401: {
@@ -87,7 +87,7 @@ instance.interceptors.request.use(
         // 但是即使token存在，也有可能token是过期的，所以在每次的请求头中携带token
         // 后台根据携带的token判断用户的登录情况，并返回给我们对应的状态码
         // 而后我们可以在响应拦截器中，根据状态码进行一些统一的操作。
-        const token = store.state.token;
+        let token = store.state.token;
         token && (config.headers.Authorization = token);
         return config
     },
@@ -101,10 +101,11 @@ instance.interceptors.response.use(
     res => res.status === 200 ? Promise.resolve(res) : Promise.reject(res),
     // 请求失败
     error => {
-        const {response} = error;
+        let response = error.response;
         if (response) {
             // 请求已发出，但是不在2xx的范围
             errorHandle(response.status, response.data.message);
+            // 可在组件内获取到服务器返回信息
             return Promise.reject(response)
         } else {
             // 处理断网的情况
@@ -114,10 +115,5 @@ instance.interceptors.response.use(
             store.commit('changeNetwork', false)
         }
     });
-
-/**
- *  封装get请求
- */
-
 
 export default instance;

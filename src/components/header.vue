@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import btn from '../page/core/btn'
+import btn from './core/btn'
 export default {
     components:{
         btn,

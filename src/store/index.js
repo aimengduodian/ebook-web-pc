@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-Vue.use(Vuex);
+import area from './modules/area'
+import group from './modules/group'
 
-let store = new Vuex.Store({
-    state: {
-        network: true,
-        changeNetwork: true,
-    },
-    modules: {
 
-    }
-});
+Vue.use(Vuex)
 
-export default store;
+export default new Vuex.Store({
+  modules: {
+    area,
+    group
+  }
+})

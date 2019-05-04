@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import panel from "../page/core/panel"
+import panel from "../components/core/panel"
 export default {
     components: {
         panel,
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-    @import "../styles/scss/element";
+    @import "../assets/scss/element";
     .panel{
         @include panel;
         position: fixed;
