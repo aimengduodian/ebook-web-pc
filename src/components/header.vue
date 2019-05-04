@@ -20,32 +20,27 @@ export default {
     //做css module处理
     .header{
         color: #666;
-        height: 50px;
-        line-height: 50px;
+        height: 7vh;
+        line-height: 7vh;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
-        font-size: 16px;
         background: #fff url(//m.jr.jd.com/spe/qyy/main/images/jr-logo.png) center no-repeat;
         background-size: auto 50%;
         z-index: 100;
         .left{
-            font-size: 14px;
-            height: 15px;
-            line-height: 15px;
-            margin: 9px 0 0 9px;
+            font-size: 4vh;
+            padding: 0;
         }
         .appDownload{
             float: right;
-            font-size: 12px;
+            font-size: 3vh;
+            height: 4vh;
             border-width: 0;
-            height: 28px;
-            line-height: 28px;
-            min-width: 60px;
+            border-radius: 4px;
             padding: 0;
-            border-radius: 2px;
-            margin: 14px 12px 0 0;
+            margin: 18px 24px 0 0;
         }
     }
 </style>

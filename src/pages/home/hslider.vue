@@ -66,8 +66,8 @@
     .list{
         @include list(row);
         background: #fff;
-        padding-top: 20px;
-        padding-bottom: 10px;
+        padding-top: 40px;
+        padding-bottom: 20px;
         justify-content: space-around; /*两边对齐*/
         a{
             text-decoration: none;    /*取消下划线*/
@@ -76,12 +76,12 @@
             text-align: center;
             img{
                 display: inline-block;
-                width: 45px;
-                height: 45px;
+                width: 90px;
+                height: 90px;
             }
             h4{
-                font-size: 13px;
-                margin-top: 6px;
+                font-size: 26px;
+                margin-top: 12px;
                 color: #666;
             }
         }
