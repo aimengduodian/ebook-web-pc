@@ -1,5 +1,6 @@
 <template>
     <div>
+        <headerAd></headerAd>
         <mycenter v-if="showPanelFlag === 0" @sendChildDataToFather="getChildData"></mycenter>
         <advice v-if="showPanelFlag === 1"></advice>
         <version v-if="showPanelFlag === 2"></version>
@@ -8,7 +9,7 @@
 </template>
 
 <script>
-    import headerAd from '../../components/header';
+    import headerAd from '../../components/filtrate';
     import navbar from '../../components/navbar';
     import advice from './advice';
     import version from './version';

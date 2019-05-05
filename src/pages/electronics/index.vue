@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import headerAd from '../../components/header';
+    import headerAd from '../../components/filtrate';
     import navbar from '../../components/navbar';
     import slider from './hslider'
     import novice from './novice'
@@ -44,10 +44,10 @@
     .content {
         /*局部滑动，实现在微信中隐藏滚动条*/
         position: absolute;
-        top: 7vh;
+        top: 12vh;
         left: 0;
         right: 0;
-        height: 85vh;  /*根据设计稿计算高度*/
+        height: 80vh;  /*根据设计稿计算高度*/
         overflow: scroll;
         transform: translate3d(0, 0, 0);
     }

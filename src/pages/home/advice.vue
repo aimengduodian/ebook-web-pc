@@ -38,8 +38,8 @@
             },
             subAdvice() {
 
-                this.$post("/useradvice/save", this.userAdvice, (req) => {
-                    if (req.status == 200) {
+                this.$http.post("/useradvice/save", this.userAdvice, (req) => {
+                    if (req.status === 200) {
                         this.$createDialog({
                             type: 'confirm',
                             icon: 'cubeic-alert',
