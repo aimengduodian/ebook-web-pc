@@ -2,9 +2,12 @@
     <div>
         <headerAd/>
         <div :class="$style.content">
+            <slider/>
             <novice></novice>
             <borrow></borrow>
             <money></money>
+            <product></product>
+            <life></life>
             <foot></foot>
         </div>
         <navbar/>
@@ -23,7 +26,6 @@
     import foot from '../../components/footer'
 
     export default {
-        name: 'Book',
         components: {
             headerAd,
             navbar,

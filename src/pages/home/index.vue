@@ -1,54 +1,66 @@
-<template lang="html">
+<template>
     <div>
-        <headerAd/>
-        <div :class="$style.content">
-            <slider/>
-            <novice></novice>
-            <borrow></borrow>
-            <money></money>
-            <product></product>
-            <life></life>
-            <foot></foot>
-        </div>
-        <navbar/>
+        <headerAd></headerAd>
+        <section class="content has-header">
+            <div class="list card">
+                <header class="item item-avatar">
+                    <img src="../../assets/pic/head.png">
+                    <h2 style="margin-top:11px;">昵称：{{ userinfo.nickName }}</h2>
+                </header>
+
+                <article class="item item-body">
+                    <div class="weui-cells">
+                        <span class="weui-cell weui-cell_access">
+                             <div class="weui-cell__bd">
+                                <router-link :to="{path:'/advice' }">用户建议</router-link>
+                             </div>
+                            <div class="weui-cell__ft">
+                            </div>
+                        </span>
+                        <span class="weui-cell weui-cell_access">
+                            <div class="weui-cell__bd">
+                                  <router-link :to="{path:'/version'}">关于我们</router-link>
+                            </div>
+                            <div class="weui-cell__ft">
+                            </div>
+                        </span>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <navbar></navbar>
     </div>
 </template>
 
 <script>
     import headerAd from '../../components/header';
     import navbar from '../../components/navbar';
-    import slider from './hslider'
-    import novice from './novice'
-    import borrow from './borrow'
-    import money from './money'
-    import product from './product'
-    import life from './life'
-    import foot from '../../components/footer'
-
     export default {
+        name: "mycenter",
         components: {
             headerAd,
             navbar,
-            slider,
-            novice,
-            borrow,
-            money,
-            product,
-            life,
-            foot,
-        }
+        },
+        data() {
+            return {
+                userinfo: {
+                    nickName: "vxiao",
+                },
+            }
+        },
+        created() {
+        },
+        methods: {},
     }
 </script>
 
-<style lang="scss" module>
-    .content {
-        /*局部滑动，实现在微信中隐藏滚动条*/
-        position: absolute;
-        top: 7vh;
-        left: 0;
-        right: 0;
-        height: 85vh;  /*根据设计稿计算高度*/
-        overflow: scroll;
-        transform: translate3d(0, 0, 0);
+<style scoped>
+    .add_border {
+        border: saddlebrown 1px solid;
     }
+
+    .router-link-active {
+        text-decoration: none;
+    }
+
 </style>

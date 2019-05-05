@@ -4,6 +4,8 @@ import router from './router'
 import store from './store/index'
 //导入cube-ui
 import './assets/cube/cube-ui'
+//导入图标样式
+import './assets/ionic/css/ionic.min.css'
 //导入api接口
 import api from './common/request/api'
 
