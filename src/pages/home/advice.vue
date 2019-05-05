@@ -7,12 +7,12 @@
         </div>
         <div class="textarea-wrapper">
             <cube-textarea v-model="userAdvice.des" :maxlength="wordNum" placeholder="在此输入建议！"
-                           @input="hasContent()"></cube-textarea>
+                           @input="hasContent()">
+            </cube-textarea>
         </div>
         <div class="btnWrap">
             <cube-button :disabled="disabled" @click="subAdvice()">提交</cube-button>
         </div>
-
     </div>
 </template>
 

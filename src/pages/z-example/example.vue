@@ -32,7 +32,7 @@
     // import getpk from '../encrypt/getPassKey' // 获取密码加密函数
     // console.log(getpk)
     //import api from "../common/api/index";
-    import api from '../common/request/api/index'
+    import api from '../../common/request/api/index'
     export default {
         components: {},
         name: "example",
@@ -143,8 +143,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" module>
-    @import '../assets/scss/variables';
-    @import '../assets/scss/mixins';
+    @import '../../assets/scss/variables';
+    @import '../../assets/scss/mixins';
 
     .content {
         width: 100%;
