@@ -90,31 +90,6 @@ module.exports = {
           }
         }
     },
-
-    // 所有 webpack-dev-server 的选项都支持。注意：
-    // 有些值像 host、port 和 https 可能会被命令行参数覆写。
-    // 有些值像 publicPath 和 historyApiFallback 不应该被修改，
-    // 因为它们需要和开发服务器的 publicPath 同步以保障正常的工作。
-    devServer: {
-        open: true,  //配置自动启动浏览器
-        host: '192.168.0.150',
-        port: 8080,
-        https: false,
-        hotOnly: false,
-        proxy: {
-            '/apis': {
-                target: 'http://localhost:8080',  // 需要请求的地址
-                ws: true,      // websocket
-                changeOrigin: true,   // 是否跨域
-                pathRewrite: {
-                    '^/apis': ''
-                }
-            },
-        },
-        before: app => {
-        },
-    },
-
     // 第三方插件配置
     pluginOptions: {
       'cube-ui': {
