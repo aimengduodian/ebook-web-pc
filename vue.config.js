@@ -1,6 +1,6 @@
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
-        ? '/project1/'
+        ? ''
         : '/',
 
     outputDir: 'dist',
@@ -72,30 +72,22 @@ module.exports = {
 
     // 配置高于chainWebpack中关于 css loader 的配置
     css: {
-        // 是否开启支持 foo.module.css 样式
         modules: false,
 
-        // 是否使用 css 分离插件 ExtractTextPlugin，
-        // 采用独立样式文件载入，不采用 <style> 方式内联至 html 文件中
         extract: true,
 
-        // 是否构建样式地图，false 将提高构建速度
         sourceMap: false,
 
-        // css预设器配置项
         loaderOptions: {
-            // 引入全局scss
-            sass: {
-                /*data: `@import "@/assets/scss/common.scss";`*/
-            },
-            // 引入iconfont
-            css: {
-                // 这里的选项会传递给 css-loader
-               /* data: `@import "@/assets/fonts/iconfont.css";`*/
-            },
-            postcss: {
-                // 这里的选项会传递给 postcss-loader
-            }
+          sass: {},
+          css: {},
+          postcss: {},
+          stylus: {
+            'resolve url': true,
+            'import': [
+              './src/theme'
+            ]
+          }
         }
     },
 
@@ -122,12 +114,12 @@ module.exports = {
         before: app => {
         },
     },
-    // 构建时开启多进程处理 babel 编译
-  /*  parallel: require('os').cpus().length > 1,*/
-
-    // https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa
-    pwa: {},
 
     // 第三方插件配置
-    pluginOptions: {}
+    pluginOptions: {
+      'cube-ui': {
+        postCompile: true,
+        theme: true
+      }
+    }
 };

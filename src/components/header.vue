@@ -30,17 +30,18 @@ export default {
         background-size: auto 50%;
         z-index: 100;
         .left{
-            font-size: 4vh;
+            font-size: 16px;
             padding: 0;
+            margin-left: 12px;
         }
         .appDownload{
             float: right;
-            font-size: 3vh;
-            height: 4vh;
+            font-size: 16px;
+            height: 20px;
             border-width: 0;
-            border-radius: 4px;
+            border-radius: 1px;
             padding: 0;
-            margin: 18px 24px 0 0;
+            margin: 15px 12px 0 0;
         }
     }
 </style>
