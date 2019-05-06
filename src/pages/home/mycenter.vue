@@ -3,7 +3,7 @@
         <section class="content has-header">
             <div class="list card">
                 <header class="item item-avatar">
-                    <img src="../../assets/pic/head.png">
+                    <img src="../../assets/pic/timg.jpg">
                     <h2 style="margin-top:11px;">昵称：{{ userinfo.nickName }}</h2>
                 </header>
 
