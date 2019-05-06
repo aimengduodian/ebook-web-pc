@@ -2,7 +2,7 @@
     <div>
         <headerAd/>
         <div :class="$style.content">
-            <grid-view :grid="grid" url="/book/books" :load="load"></grid-view>
+           <grid-view></grid-view>
         </div>
         <nav-bar/>
     </div>
@@ -37,68 +37,7 @@
                 isShow: false
             }
         },
-        created() {
-            this.queryList.flag = parseInt(this.$route.query.flag);
-            this.$store.commit('setFlag', parseInt(this.$route.query.flag));
-            this.initType();
-            this.initGrid();
-        },
-        computed: {
-            power() {
-                return this.$store.getters.power;
-            },
-            power_flag() {
-                return this.$store.getters.power_flag;
-            }
-        },
-        methods: {
-            search() {
-                this.load++;
-                this.isShow = false;//搜索下拉隐藏
-                this.initGrid();
-            },
-            initGrid() {
-                //console.log("this.grid",this.queryList)
-                this.grid = {
-                    img: 'bookPic',
-                    query: this.queryList,
-                    view: this.view,
-                    del: this.del,
-                    edit: this.update,
-                    columns: [
-                        {title: "名称", key: 'bookName'},
-                        {title: "出版社", key: 'bookPub'},
-                        {title: "价格", key: 'bookPrice', format: this.setPrice},
-                    ],
-                };
-            },
-            setPrice(row) {
-                return "￥" + row.bookPrice;
-            },
-            view(row) {
-                this.$router.push({path: '/bookView', query: {id: row.id}});
-            },
-            del(row, callback) {
-                let para = {id: row.id};
-                this.$post('/book/delete', para, (msg) => {
-                    this.$createDialog({
-                        type: 'alert',
-                        title: '信息',
-                        content: '删除成功 ',
-                        icon: 'cubeic-right',
-                        onConfirm: () => {
-                            callback(msg.data.code);
-                        }
-                    }).show()
-                });
-            },
-            update(row) {
-                this.$router.push({path: '/bookAdd', query: {id: row.id}})
-            },
-            initType() {
 
-            },
-        }
     }
 </script>
 
