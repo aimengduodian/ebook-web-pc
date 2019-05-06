@@ -1,26 +1,17 @@
 <template>
-    <cube-page type="scroll-view" title="Scroll" class="toutiao">
+    <cube-page type="scroll-view" class="toutiao">
         <template slot="content">
             <div class="content-scroll-wrapper">
                 <div class="content-scroll-list-wrap" ref="scrollWrapper">
-                    <cube-scroll
-                            ref="contentScroll"
-                            :data="content"
-                            :options="options"
-                            @pulling-down="onPullingDown"
-                            @pulling-up="onPullingUp">
+                    <cube-scroll ref="contentScroll" :data="content" :options="options" @pulling-down="onPullingDown" @pulling-up="onPullingUp">
                         <ul class="imgs-wrapper">
                             <li v-for="(item, index) in content" :key="index" class="imgs-item">
                                 <img :src="item.url" @load="onImgLoad">
                             </li>
                         </ul>
                         <template slot="pulldown" slot-scope="props">
-                            <div v-if="props.pullDownRefresh"
-                                 class="cube-pulldown-wrapper"
-                                 :style="props.pullDownStyle">
-                                <div v-if="props.beforePullDown"
-                                     class="before-trigger"
-                                     :style="{paddingTop: props.bubbleY + 'px'}">
+                            <div v-if="props.pullDownRefresh" class="cube-pulldown-wrapper" :style="props.pullDownStyle">
+                                <div v-if="props.beforePullDown" class="before-trigger" :style="{paddingTop: props.bubbleY + 'px'}">
                                     <span :class="{rotate: props.bubbleY > 0}">↓</span>
                                 </div>
                                 <div class="after-trigger" v-else>
@@ -28,8 +19,9 @@
                                         <cube-loading></cube-loading>
                                     </div>
                                     <transition name="success">
-                                        <div v-show="!props.isPullingDown" class="text-wrapper"><span
-                                                class="refresh-text">今日头条推荐引擎有x条更新</span></div>
+                                        <div v-show="!props.isPullingDown" class="text-wrapper">
+                                            <span class="refresh-text">今日头条推荐引擎有x条更新</span>
+                                        </div>
                                     </transition>
                                 </div>
                             </div>
@@ -55,7 +47,6 @@
             url: 'https://dpubstatic.udache.com/static/dpubimg/K1JqUN8HSA/toutiao_31.JPG'
         }
     ]
-    const txts = ['关注', '推荐', '新时代', '热点', '体育', '娱乐', '科技', '头条号', '问答', '国际', 'cube-ui666']
     let cnt = 1
     export default {
         data() {
@@ -64,13 +55,11 @@
                 options: {
                     pullDownRefresh: {
                         threshold: 60,
-                        // stop: 44,
                         stopTime: 1000,
                         txt: '更新成功'
                     },
                     pullUpLoad: true
                 },
-                navTxts: txts,
                 secondStop: 26
             }
         },
@@ -101,8 +90,6 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
     .toutiao
-        .header
-            display: none
         .content
             margin: 0 !important
             height: 100%
