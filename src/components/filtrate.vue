@@ -1,36 +1,36 @@
 <template>
     <panel title="搜索*筛选" :class="$style.panel">
         <ul :class="$style.content">
-            <li>
+            <li :class="$style.search">
                 <input type="text" placeholder="点击搜索"/>
                 <router-link style="display: inline-block" :to="{name:'home',query:{id:0}}">
                     <button>发布</button>
                 </router-link>
             </li>
             <li>
-                <button @click="hideShowFilter" class="button  button-light icon-right ion-android-arrow-dropdown">
+                <cube-button @click="hideShowFilter" style="background-color: #f5f5f5; color: grey">
                     筛选
-                </button>
+                </cube-button>
             </li>
-            <li title="搜索" v-show="isShow">
+            <li title="搜索" v-show="isShow" :class="$style.filter">
                 <ul>
-                    <li class="cube-index-list-item">
+                    <li>
                         <label>价格:</label>
                         <input type="text" placeholder="￥起始"/>
-                        <em>&nbsp;&nbsp;至&nbsp;&nbsp;</em>
+                        <em class="line-span">——</em>
                         <input type="text" placeholder="￥结束"/>
                     </li>
-                    <li class="cube-index-list-item">
+                    <li>
                         <label>类型:</label>
                         <input type="text" placeholder="￥结束"/>
                     </li>
-                    <li class="cube-index-list-item">
+                    <li>
                         <label>日期:</label>
                         <input type="text" placeholder="请选择开始日期">
                         <em class="line-span">——</em>
                         <input type="text" placeholder="请选择结束日期">
                     </li>
-                    <li class="cube-index-list-item">
+                    <li>
                         <cube-button :light="true">重置</cube-button>
                         <cube-button :light="true">搜索</cube-button>
                     </li>
@@ -65,64 +65,51 @@
 
     .panel {
         @include panel;
-        margin-top: 0;
         & > h4 {
             display: none;
         }
+        height: 12vh;
+        position: fixed;
+        margin-top: 2px;
+        left: 2px;
+        right: 2px;
+        background: #F5F5F5;
+        text-align: center;
+        z-index: 1200;
         .content {
             @include flex;
-            li {
-                border: 1px solid #f5f5f5;
-                z-index: 1200;
-                &:nth-child(1) {
-                    @include flex(row);
-                    input {
-                        flex-grow: 1;
-                       // padding-left: 5%;
-                    }
-                    button {
-                        color: white;
-                        background-color: #56b6e7;
-                        border: 0 solid transparent; //自定义边框
-                        height: 100%;
-                        width: 60px;
-                        font-size: 16px;
-                    }
+            .search {
+                @include flex(row);
+                box-sizing: border-box;
+                input {
+                    flex-grow: 1;
+                    padding-left: 5%;
                 }
-                &:nth-child(2) {
-                    button {
-                        width: 100%;
-                    }
+                button {
+                    height: 100%;
+                    color: white;
+                    background-color: #56b6e7;
+                    border: 0 solid transparent; //自定义边框
                 }
-                &:nth-child(3) {
-                    background-color: white;
-                    ul {
-                        @include flex;
-                        li {
-                            @include flex(row);
-                            height: 6vh;
-                            border: 0;
-                            label, em {
-                                text-align: center;
-                                width: 15%;
-                                line-height: 6vh;
-                            }
-                            input {
-                                width: 35%;
-                                height: 100%;
-                            }
-
-                            &:nth-child(2) {
-                                input {
-                                    width: 85%
-                                }
-                            }
-
-                            &:nth-child(4) {
-                                > * {
-                                    display: inline-block;
-                                    width: 50%;
-                                }
+            }
+            .filter {
+                background-color: white;
+                ul {
+                    @include flex;
+                    li {
+                        @include flex(row);
+                        label, em {
+                            vertical-align:middle;
+                            width: 15%;
+                        }
+                        input {
+                            width: 35%;
+                            flex-grow: 1;
+                        }
+                        &:nth-child(4) {
+                            > * {
+                                display: inline-block;
+                                width: 50%;
                             }
                         }
                     }
