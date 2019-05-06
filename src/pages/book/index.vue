@@ -2,15 +2,15 @@
     <div>
         <headerAd/>
         <div :class="$style.content">
-           <grid-view></grid-view>
+            <grid-view/>
         </div>
         <nav-bar/>
     </div>
 </template>
 
 <script>
-    import headerAd from '../../components/filtrate';
-    import navBar from '../../components/navbar';
+    import headerAd from '../../components/filtrate'
+    import navBar from '../../components/navbar'
     import gridView from '../../components/gridView'
 
     export default {
@@ -37,6 +37,15 @@
                 isShow: false
             }
         },
+        methods: {
+            getBookList() {
+                // 请求book数据
+                this.$api.page1.testDetail(this.idBook, {}).then(res => {
+                    this.author = res.data.page.info.author;
+                    this.bookName = res.data.page.info.bookName;
+                });
+            }
+        }
 
     }
 </script>

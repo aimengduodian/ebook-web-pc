@@ -3,16 +3,30 @@
         <template slot="content">
             <div class="content-scroll-wrapper">
                 <div class="content-scroll-list-wrap" ref="scrollWrapper">
-                    <cube-scroll ref="contentScroll" :data="content" :options="options" @pulling-down="onPullingDown" @pulling-up="onPullingUp">
+                    <cube-scroll ref="contentScroll"
+                                 :data="content"
+                                 :options="options"
+                                 @pulling-down="onPullingDown"
+                                 @pulling-up="onPullingUp">
                         <ul class="imgs-wrapper">
                             <li v-for="(item, index) in content" :key="index" class="imgs-item">
-                                <img :src="item.url" @load="onImgLoad">
+                                <div v-if="item.id !== '0'" class="item item-thumbnail-left">
+                                    <img :src="item.url" @load="onImgLoad">
+                                    <p>哈哈哈哈哈哈哈哈哈</p>
+                                    <p>嘿嘿嘿嘿嘿</p>
+                                    <p>哈哈哈哈哈哈哈哈哈</p>
+                                </div>
+                                <div v-else>
+                                    <ads></ads>
+                                </div>
                             </li>
                         </ul>
                         <template slot="pulldown" slot-scope="props">
-                            <div v-if="props.pullDownRefresh" class="cube-pulldown-wrapper" :style="props.pullDownStyle">
-                                <div v-if="props.beforePullDown" class="before-trigger" :style="{paddingTop: props.bubbleY + 'px'}">
-                                    <span :class="{rotate: props.bubbleY > 0}">↓</span>
+                            <div v-if="props.pullDownRefresh" class="cube-pulldown-wrapper"
+                                 :style="props.pullDownStyle">
+                                <div v-if="props.beforePullDown" class="before-trigger"
+                                     :style="{paddingTop: props.bubbleY + 'px'}">
+                                    <span :class="{rotate: props.bubbleY > 0}">🌹</span>
                                 </div>
                                 <div class="after-trigger" v-else>
                                     <div v-show="props.isPullingDown" class="loading">
@@ -20,7 +34,7 @@
                                     </div>
                                     <transition name="success">
                                         <div v-show="!props.isPullingDown" class="text-wrapper">
-                                            <span class="refresh-text">今日头条推荐引擎有x条更新</span>
+                                            <span class="refresh-text">ebook向您推荐成功</span>
                                         </div>
                                     </transition>
                                 </div>
@@ -35,20 +49,38 @@
 
 <script type="text/ecmascript-6">
     import CubePage from './core/cube-page.vue'
+    import Ads from '../pages/tutor/borrow'
 
     const imgs = [
         {
+            id: 'ffhseufhesif',
             url: 'https://dpubstatic.udache.com/static/dpubimg/7EzIhoEvnG/toutiao_12.JPG'
         },
         {
+            id: 'ffhseufhesif',
             url: 'https://dpubstatic.udache.com/static/dpubimg/GR0Piaf5sz/toutiao_21.JPG'
         },
         {
+            id: '0',
+            url: 'https://dpubstatic.udache.com/static/dpubimg/K1JqUN8HSA/toutiao_31.JPG'
+        },
+        {
+            id: 'ffhseufhesif',
             url: 'https://dpubstatic.udache.com/static/dpubimg/K1JqUN8HSA/toutiao_31.JPG'
         }
     ]
     let cnt = 1
     export default {
+        props: {
+            listMsg: {
+                type: Array,
+                default: [],
+            },
+            content: {
+                type: String,
+                default: ''
+            }
+        },
         data() {
             return {
                 content: imgs.slice(),
@@ -64,7 +96,8 @@
             }
         },
         components: {
-            CubePage
+            CubePage,
+            Ads
         },
         methods: {
             onPullingDown() {
@@ -108,6 +141,7 @@
                 overflow: hidden
                 .imgs-wrapper
                     .imgs-item
+                        padding-bottom 5px
                         > img
                             width: 100%
         .cube-pulldown-wrapper

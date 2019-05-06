@@ -3,6 +3,7 @@
         <mycenter v-if="showPanelFlag === 0" @sendChildDataToFather="getChildData"></mycenter>
         <advice v-if="showPanelFlag === 1"></advice>
         <version v-if="showPanelFlag === 2"></version>
+        <test></test>
         <navbar></navbar>
     </div>
 </template>
@@ -12,6 +13,7 @@
     import advice from './advice';
     import version from './version';
     import mycenter from './mycenter';
+    import test from '../z-example/requestTest';
 
     export default {
         components: {
@@ -19,6 +21,7 @@
             advice,
             version,
             mycenter,
+            test,
         },
         data() {
             return {

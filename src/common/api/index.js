@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import config from './config'
 
 Vue.use(VueAxios, axios)
 
 let apiCrfCod = Vue.axios.create({
     method: 'GET',
-    baseURL: ''
+    baseURL: config.baseUrl
 })
 
 let apiCollection = Vue.axios.create({
     method: 'GET',
-    baseURL: ''
+    baseURL: config.baseUrl
 })
 
 let apiResource = Vue.axios.create({
@@ -19,24 +20,42 @@ let apiResource = Vue.axios.create({
     baseURL: '/'
 })
 
+let apiPost = Vue.axios.create({
+    method: 'POST',
+    baseURL: config.baseUrl
+})
+
+let apiGet = Vue.axios.create({
+    method: 'GET',
+    baseURL: config.baseUrl
+})
+
 export default {
-    getDistrict: (opts) => {
-        console.log(opts)
-        return apiResource({url: 'login?', params: {...opts}})
+    /**
+     * 获取产品列表
+     * @param url
+     * @param opts
+     * @returns {*}
+     */
+    getItemList: (url, opts) => {
+        return apiPost({url: url, params: {...opts}})
     },
-    getCsrf: (opts) => {
-        return apiCrfCod({url: '/book/books', params: {...opts}})
+    /**
+     * get没有参数
+     * @param url
+     * @returns {*}
+     */
+    getItemOneParameter: (url) => {
+        return apiGet({url: url})
     },
-    getColle: (opts) => {
-        return apiCollection({url: 'service/rest/fw.System/collection/key?', params: {...opts}})
+
+    /**
+     * get带有参数的
+     * @param url
+     * @param opts
+     * @returns {*}
+     */
+    getItemTwoParmeter: (url, opts) => {
+        return apiGet({url: url, params: {...opts}})
     },
-    getGroup: (opts) => {
-        return apiResource({url: 'mapdata?', params: {...opts}})
-    },
-    getGroupTypes: (opts) => {
-        return apiResource({url: 'mapgrouptype', params: {...opts}})
-    },
-    getLocation: (opts) => {
-        return apiResource({url: 'orgnearby?', params: {...opts}})
-    }
 }

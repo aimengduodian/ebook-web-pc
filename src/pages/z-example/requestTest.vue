@@ -10,9 +10,6 @@
         <div>
             <header>post请求测试</header>
             <article>
-                <h3>图书信息</h3>
-                <p>{{bookName}}</p>
-                <p>{{author}}</p>
                 <h3>电子信息</h3>
                 <p>{{EleName}}</p>
                 <img :src="pic" alt="">
@@ -24,13 +21,11 @@
 </template>
 
 <script>
+    import config from '../../common/api/config'
     export default {
         data() {
             return {
-                idBook: 'ce643ec922584fa7b750645072e51d79',
-                bookName: '',
-                author: '',
-                idEle: '79649e1071f64f3ca020f0dce62e17bb',
+                idEle: 'dce17be799c04a0cb920a9ea6fd9ce18',
                 EleName: '',
                 pic: '',
 
@@ -38,16 +33,12 @@
         },
         methods: {
             onLoad() {
-                // 请求page1数据
-                this.$api.page1.testDetail(this.idBook, {}).then(res => {
-                    this.author = res.data.page.info.author;
-                    this.bookName = res.data.page.info.bookName;
-                });
-                // 请求page2数据
-                this.$api.page2.testDetail(this.idEle, {}).then(res => {
-                    //console.log(res)
-                    this.EleName = res.data.page.info.electronicsName;
-                    this.pic = 'http://47.106.222.50:8080' + res.data.page.info.electronicsPic;
+                // 请求数据
+                let that = this;
+                let data = []
+                this.$api.getView('/electronics/getById/'+ this.idEle, data).then(res => {
+                    that.EleName = res.data.page.info.electronicsName;
+                    that.pic = config.picUrl + res.data.page.info.electronicsPic;
                 })
             }
         }
