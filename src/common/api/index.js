@@ -37,7 +37,7 @@ export default {
      * @param opts
      * @returns {*}
      */
-    getItemList: (url, opts) => {
+    postTwoParameter: (url, opts) => {
         return apiPost({url: url, params: {...opts}})
     },
     /**
@@ -45,7 +45,7 @@ export default {
      * @param url
      * @returns {*}
      */
-    getItemOneParameter: (url) => {
+    getOneParameter: (url) => {
         return apiGet({url: url})
     },
 
@@ -55,7 +55,7 @@ export default {
      * @param opts
      * @returns {*}
      */
-    getItemTwoParmeter: (url, opts) => {
+    getTwoParmeter: (url, opts) => {
         return apiGet({url: url, params: {...opts}})
     },
 }

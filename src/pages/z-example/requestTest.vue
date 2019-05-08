@@ -22,6 +22,7 @@
 
 <script>
     import config from '../../common/api/config'
+
     export default {
         data() {
             return {
@@ -35,8 +36,7 @@
             onLoad() {
                 // 请求数据
                 let that = this;
-                let data = []
-                this.$api.getView('/electronics/getById/'+ this.idEle, data).then(res => {
+                this.$api.getView('/electronics/getById/' + this.idEle, data).then(res => {
                     that.EleName = res.data.page.info.electronicsName;
                     that.pic = config.picUrl + res.data.page.info.electronicsPic;
                 })

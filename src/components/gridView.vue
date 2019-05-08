@@ -51,7 +51,7 @@
     import CubePage from './core/cube-page.vue'
     import Ads from '../pages/tutor/borrow'
 
-    const imgs = [
+    let imgs = [
         {
             id: 'ffhseufhesif',
             url: 'https://dpubstatic.udache.com/static/dpubimg/7EzIhoEvnG/toutiao_12.JPG'
@@ -71,7 +71,7 @@
     ]
     let cnt = 1
     export default {
-        props: {
+     /*   props: {
             listMsg: {
                 type: Array,
                 default: [],
@@ -80,7 +80,7 @@
                 type: String,
                 default: ''
             }
-        },
+        },*/
         data() {
             return {
                 content: imgs.slice(),
@@ -114,6 +114,20 @@
             onImgLoad() {
                 const contentScroll = this.$refs.contentScroll
                 contentScroll.scroll.beforePullDown && contentScroll.refresh()
+            },
+            /**
+             * 获取和处理列表数据
+             * @param url
+             * @param prop
+             */
+            getAndProcessTableMsg(url, prop) {
+                // 请求book数据
+                let that = this;
+                url = '/book/books'
+                prop = {'pageSize': '10', 'pageNumber': '0', 'flag': '0'}
+                this.$api.postTwoParameter('/book/books', prop).then(res => {
+                    console.log(res)
+                })
             }
         },
         mounted() {

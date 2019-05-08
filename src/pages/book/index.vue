@@ -2,7 +2,7 @@
     <div>
         <headerAd/>
         <div :class="$style.content">
-            <grid-view/>
+                <grid-view/>
         </div>
         <nav-bar/>
     </div>
@@ -37,13 +37,16 @@
                 isShow: false
             }
         },
+        mounted() {
+            this.getBookList();
+        },
         methods: {
             getBookList() {
                 // 请求book数据
-                this.$api.page1.testDetail(this.idBook, {}).then(res => {
-                    this.author = res.data.page.info.author;
-                    this.bookName = res.data.page.info.bookName;
-                });
+                let data = {'pageSize': '10', 'pageNumber': '0', 'flag': '0'}
+                this.$api.postTwoParameter('/book/books', data).then(res => {
+
+                })
             }
         }
 
