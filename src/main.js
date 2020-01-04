@@ -2,20 +2,29 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store/index'
-//导入cube-ui
-import './assets/cube/cube-ui'
-//导入图标样式
-import './assets/ionic/css/ionic.min.css'
-//导入api接口
-import api from './common/api/index'
+import ElementUI from 'element-ui'
+import VueI18n from 'vue-i18n'
+import { messages } from './components/common/i18n'
+import 'element-ui/lib/theme-chalk/index.css' // 默认主题
+// import './assets/css/theme-green/index.css' // 浅绿色主题
+import './assets/css/icon.css'
+import './components/common/directives'
+import 'babel-polyfill'
 
 Vue.config.productionTip = false
 
-//将api挂载到vue的原型上、定义为全局变量
-Vue.prototype.$api = api;
+Vue.use(VueI18n)
+Vue.use(ElementUI, {
+  size: 'small'
+})
+const i18n = new VueI18n({
+  locale: 'zh',
+  messages
+})
 
 new Vue({
-    render: h => h(App),
-    router,
-    store
+  router,
+  store,
+  i18n,
+  render: h => h(App)
 }).$mount('#app')
