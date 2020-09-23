@@ -37,7 +37,7 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import { fetchDeleteOthers } from '../../../api/ebook/others'
+  import { fetchDeleteOthers } from '@/api/ebook/others'
   import commonFunction from '../../../utils/common'
   import config from '../../../utils/BaseConfig'
   import MyViewDialog from './components/ViewDialog'
@@ -110,7 +110,7 @@
     computed: {
       ...mapGetters({
         list: 'getOthers',
-        totalPages: 'totalPages'
+        totalPages: 'othersTotalPages'
       }),
       tableData: function () {
         const table = JSON.parse(JSON.stringify(this.list))

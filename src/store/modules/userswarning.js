@@ -1,6 +1,6 @@
 import {
   fetchUsersReportList
-} from '../../api/ebook/usersWarning'
+} from '@/api/ebook/usersWarning'
 
 const state = {
   warnings: null,
@@ -22,7 +22,7 @@ const getters = {
   },
 
   //返回总页数
-  totalPages_report (state) {
+   usersWarningsTotalPages (state) {
     if (state.warnings == null) {
       return null
     }

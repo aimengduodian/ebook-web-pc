@@ -43,7 +43,7 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import { fetchDeleteElectronics } from '../../../api/ebook/electronics'
+  import { fetchDeleteElectronics } from '@/api/ebook/electronics'
   import commonFunction from '../../../utils/common'
   import config from '../../../utils/BaseConfig'
   import MyViewDialog from './components/ViewDialog'
@@ -119,7 +119,7 @@
     computed: {
       ...mapGetters({
         list: 'getElectronics',
-        totalPages: 'totalPages',
+        totalPages: 'electronicsTotalPages',
         options: 'getElectronicTypes'
       }),
       tableData: function () {

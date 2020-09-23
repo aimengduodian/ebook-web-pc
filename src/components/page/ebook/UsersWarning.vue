@@ -42,9 +42,9 @@
     // fetchUsersReportDetail,
     fetchUsersReportMsgDelete,
     fetchReportUsers
-  } from '../../../api/ebook/usersWarning'
+  } from '@/api/ebook/usersWarning'
   import commonFunction from '../../../utils/common'
-  import config from '../../../utils/BaseConfig'
+  // import config from '../../../utils/BaseConfig'
   import MyViewDialog from './components/ViewDialog'
   import MyTable from './components/MyTable'
 
@@ -124,7 +124,7 @@
     computed: {
       ...mapGetters({
         list: 'getUsersWarningsList',
-        totalPages: 'totalPages_report'
+        totalPages: 'usersWarningsTotalPages'
       }),
       tableData: function () {
         const table = JSON.parse(JSON.stringify(this.list))

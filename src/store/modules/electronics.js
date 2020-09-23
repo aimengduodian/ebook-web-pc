@@ -1,6 +1,6 @@
 import {
   fetchGetElectronicsList
-} from '../../api/ebook/electronics'
+} from '@/api/ebook/electronics'
 
 const state = {
   page: {
@@ -21,7 +21,7 @@ const getters = {
   },
 
   //返回总页数
-  totalPages (state) {
+  electronicsTotalPages (state) {
     if (state.electronics == null) {
       return null
     }

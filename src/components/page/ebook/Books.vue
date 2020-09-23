@@ -43,7 +43,7 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import { fetchDeleteBook } from '../../../api/ebook/book'
+  import { fetchDeleteBook } from '@/api/ebook/book'
   import commonFunction from '../../../utils/common'
   import config from '../../../utils/BaseConfig'
   import MyViewDialog from './components/ViewDialog'
@@ -118,7 +118,7 @@
     computed: {
       ...mapGetters({
         list: 'getBooks',
-        totalPages: 'totalPages',
+        totalPages: 'booksTotalPages',
         options: 'getBookTypes'
       }),
       tableData: function () {
